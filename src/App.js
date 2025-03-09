@@ -113,7 +113,7 @@ function App() {
         <img src="/deco-m.png" className="deco-pic" alt="deco"/>
       </div>
       <div className="section-lg">
-        <img src="/workspace.png" className="room-pic" alt="Workspace"/>
+        <img src="/workspace.png" className="room-pic" alt="workspace"/>
         <div className="text-pic">
           Where
           <span className="special-title-lg" style={{ color: "#fff" }}>
