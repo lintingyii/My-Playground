@@ -1,38 +1,298 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+  background-color: #f5f5f5;
+  margin: 1rem;
+  height: calc(100dvh - 2rem);
+  width: calc(100vw - 2rem);
+  overflow: auto; 
+  box-sizing: border-box;
+  border-radius: 16px;
+  /* padding: 0 120px; */
+  /* padding-bottom: 80px; */
+  /* display: flex; */
   flex-direction: column;
+  scroll-behavior: auto; 
+  position: relative;
+}
+
+.header {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #222;
+  /* margin: 0 auto; */
+  height: 100dvh;
+  flex-direction: column;
+  padding: 0 120px;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  display: flex;
+  width: 100%;
+  font-family: "Kaisei Decol", serif;
+  font-size: 80px;
+  line-height: 100%;
+  color: #222;
+  margin-top: 24px;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 0px;
+  border-bottom: #222 solid 2px;
 }
 
-@keyframes App-logo-spin {
+.text-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  inline-wrap: nowrap;
+}
+
+.special-title-lg {
+  display: flex;
+  font-family: "Luxurious Script", serif;
+  font-size: 160px;
+  line-height: 100%;
+  color: #222;
+}
+
+.special-title-sl {
+  display: flex;
+  font-family: "Luxurious Script", serif;
+  font-size: 140px;
+  line-height: 100%;
+  color: #222;
+}
+
+.section {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 8rem;
+  padding: 0 120px;
+  box-sizing: border-box;
+}
+
+.text-block {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 30%;
+  /* height: 100%; */
+}
+
+.block-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 2rem;
+  width: 100%;
+  text-align: left;
+  align-items: baseline;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.section-title-year {
+  display: flex;
+  font-family: "Kaisei Decol", serif;
+  font-size: 80px;
+  line-height: 100%;
+  color: #222;
+  margin: 0px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.section-title {
+  display: flex;
+  font-family: "Kaisei Decol", serif;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 100%;
+  color: #222;
+  margin: 12px 0 0 0;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.section-content {
+  display: flex;
+  font-family: "Kaisei Decol", serif;
+  font-size: 15px;
+  line-height: auto;
+  color: #222;
+  margin: 16px 0 0 0;
+  padding-left: 4px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.spacer {
+  display: block;
+  height: 60px; /* 設定間距高度 */
+}
+
+.section-lg {
+  display: flex;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: auto;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-pic{
+  display: flex;
+  width: 100%;
+  height: 100dvh;
+  object-fit: cover;
+  object-position: center bottom;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  filter: brightness(70%);
+  /* border-radius: 1rem; */
+}
+
+.section-lg-scroll {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  /* overflow: clip; */
+}
+
+.section-lg-scroll-m {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.me-pic {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center bottom;
+  position: sticky; 
+  top: 0;
+  z-index: 2; 
+}
+
+.bg-pic {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center bottom;
+  position: sticky;
+  top: 0px; 
+  z-index: 1; 
+  opacity: 0; 
+  animation: fadeIn linear forwards;
+  animation-timeline: scroll(); 
+  animation-range: 60% 70%;
+}
+
+.deco-pic {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center bottom;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  opacity: 0; 
+  animation: fadeIn linear forwards;
+  animation-timeline: scroll(); 
+  animation-range: 78% 85%;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.text-pic {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  column-gap: 48px;
+  row-gap: 0px;
+  position: absolute; 
+  left: 0 auto; 
+  z-index: 2; 
+  color: white; 
+  font-family: "Kaisei Decol", serif;
+  font-size: 100px;
+  flex-wrap: wrap;
+}
+
+
+@media (max-width: 560px) {
+  .header {
+    padding: 0 24px;
+  }
+  .title {
+    padding: 0 24px;
+    font-size: 40px;
+    box-sizing: border-box;
+  }
+  .special-title-lg {
+    font-size: 80px;
+  }
+  .special-title-sl {
+    font-size: 65px;
+  }
+  .text-wrapper {
+    gap: 4px;
+  }
+  .section {
+    padding: 0 24px;
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+  .text-block {
+    width: 100%;
+  }
+  .section-title-year {
+    font-size: 40px;
+  }
+  .section-title {
+    font-size: 24px;
+  }
+  .section-content {
+    font-size: 12px;
+    line-height: 140%;
+  }
+  .text-pic {
+    font-size: 48px;
+  }
+  .section-lg-scroll {
+    display: none;
+  }
+  .section-lg-scroll-m {
+    display: flex;
   }
 }
