@@ -103,17 +103,17 @@ function App() {
       </div>
       {/* <div className="spacer"></div> */}
       <div className="section-lg-scroll">
-        <img src="/me-1.png" className="me-pic" />
-        <img src="/bg.png" className="bg-pic" />
-        <img src="/deco.png" className="deco-pic" />
+        <img src="/me-1.png" className="me-pic" alt="me"/>
+        <img src="/bg.png" className="bg-pic" alt="bg"/>
+        <img src="/deco.png" className="deco-pic" alt="deco"/>
       </div>
       <div className="section-lg-scroll-m">
-        <img src="/me-m.png" className="me-pic" />
-        <img src="/bg-m.png" className="bg-pic" />
-        <img src="/deco-m.png" className="deco-pic" />
+        <img src="/me-m.png" className="me-pic" alt="me"/>
+        <img src="/bg-m.png" className="bg-pic" alt="bg"/>
+        <img src="/deco-m.png" className="deco-pic" alt="deco"/>
       </div>
       <div className="section-lg">
-        <img src="/workspace.png" className="room-pic" />
+        <img src="/workspace.png" className="room-pic" alt="Workspace"/>
         <div className="text-pic">
           Where
           <span className="special-title-lg" style={{ color: "#fff" }}>
